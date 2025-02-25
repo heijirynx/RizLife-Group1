@@ -1,0 +1,715 @@
+/* Import vintage fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+:root {
+    --rizal-blue: #87CEEB;
+    --rizal-blue-dark: #5F9EA0;
+    --vintage-cream: #f4f1e9;
+    --vintage-dark: #2c2c2c;
+    --vintage-paper: #f9f7f1;
+    --text-width: 75ch;  /* Optimal line length for readability */
+}
+
+/* Base Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Old Standard TT', serif;
+    line-height: 1.8;
+    background-color: var(--vintage-cream);
+    color: var(--vintage-dark);
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    padding: 3rem 0;
+    background: linear-gradient(to bottom, var(--rizal-blue) 0%, var(--vintage-cream) 100%);
+    border-bottom: 3px double var(--vintage-dark);
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    font-size: 3.5rem;
+    color: var(--vintage-dark);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.5);
+}
+
+header p {
+    margin: 1rem 0;
+    font-size: 1.4rem;
+    color: var(--vintage-dark);
+    font-style: italic;
+}
+
+/* Navigation Buttons - Original Style */
+.navigation-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 2rem auto;
+    max-width: 900px;
+    padding: 0 1rem;
+}
+
+.button, .nav-button {
+    min-width: 180px;
+    text-align: center;
+    padding: 1.2rem 1.5rem;
+    border: 2px solid var(--rizal-blue-dark);
+    background-color: var(--vintage-paper);
+    color: var(--vintage-dark);
+    text-decoration: none;
+    font-family: 'Old Standard TT', serif;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover, .nav-button:hover {
+    background-color: var(--rizal-blue);
+    color: var(--vintage-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(135, 206, 235, 0.3);
+}
+
+/* Works page specific button size adjustments */
+.works-page .navigation-buttons {
+    max-width: 800px;
+}
+
+.works-page .button, 
+.works-page .nav-button {
+    min-width: 140px;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .navigation-buttons {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 1rem;
+        max-width: 600px;
+    }
+
+    .button, .nav-button {
+        min-width: 150px;
+        padding: 1rem 1.2rem;
+        font-size: 1.1rem;
+    }
+
+    .works-page .button,
+    .works-page .nav-button {
+        min-width: 120px;
+        padding: 0.7rem 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navigation-buttons {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+    }
+    
+    .button, .nav-button {
+        min-width: 200px;
+        padding: 0.8rem 1rem;
+    }
+
+    .works-page .button,
+    .works-page .nav-button {
+        min-width: 160px;
+        padding: 0.6rem 0.8rem;
+    }
+}
+
+/* Portrait Container */
+.homepage .portrait-container {
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    position: relative;
+    padding: 20px;  /* Add padding for the frame */
+    background: linear-gradient(to right, transparent, var(--rizal-blue) 20%, var(--rizal-blue) 80%, transparent);
+}
+
+.homepage .portrait-image {
+    width: 100%;
+    max-width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: center 25%;
+    border: 4px solid var(--rizal-blue);  /* Solid sky blue border */
+    border-radius: 25px;  /* Rounded corners */
+    padding: 0;
+    background: var(--vintage-paper);
+    box-shadow: 
+        0 0 0 1px var(--rizal-blue-dark),  /* Thin darker border */
+        0 0 20px rgba(135, 206, 235, 0.4);  /* Soft blue glow */
+    margin: 0 auto;
+    display: block;
+}
+
+.homepage .portrait-caption {
+    font-style: italic;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: var(--vintage-dark);
+    padding: 0 20px;
+    text-align: center;
+}
+
+/* Main Content */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main p, section p, .biography-content p {
+    font-family: 'Source Serif Pro', serif;
+    font-size: 1.5rem;
+    line-height: 1.8;
+    margin: 2rem auto;
+    max-width: 1000px;
+    text-align: justify;
+    color: var(--vintage-dark);
+    letter-spacing: 0.01em;
+}
+
+/* First letter styling for introduction */
+main p::first-letter {
+    font-size: inherit;
+    float: none;
+    line-height: inherit;
+    padding-right: 0;
+    color: inherit;
+}
+
+/* Emphasis styling for introduction */
+main p em, section em, .biography-content em {
+    font-family: 'Source Serif Pro', serif;
+    font-style: italic;
+    color: #2a2a2a;
+}
+
+main p strong, section strong, .biography-content strong {
+    font-family: 'Source Serif Pro', serif;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    main p, section p, .biography-content p, section ul li {
+        font-size: 1.2rem;
+        padding: 0 15px;
+    }
+
+    .character-info p {
+        font-size: 1.1rem;
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--rizal-blue);
+    color: var(--vintage-dark);
+    margin-top: 40px;
+    border-top: 3px double var(--vintage-dark);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .navigation-buttons {
+        gap: 0.5rem;
+    }
+
+    .homepage .portrait-image {
+        height: 300px;
+        border-radius: 15px;  /* Slightly smaller radius for mobile */
+    }
+    
+    .homepage .portrait-container {
+        padding: 10px;  /* Less padding on mobile */
+    }
+
+    .homepage .portrait-caption {
+        font-size: 0.9rem;
+    }
+}
+
+/* ================================================== */
+/* Works Page Enhancements */
+/* ================================================== */
+
+/* Section Styles for Works Page */
+section {
+    padding: 2.5rem;
+    margin: 2rem auto;
+    background: linear-gradient(135deg, var(--vintage-paper) 0%, rgba(135, 206, 235, 0.05) 100%);
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Character Grid Enhancements */
+.character-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+/* Character Entry Enhancements */
+.character-entry {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* Center all content */
+    margin: 25px 0;
+    padding: 15px;
+    background: linear-gradient(135deg, var(--vintage-paper) 0%, rgba(135, 206, 235, 0.1) 100%);
+    border-radius: 15px;
+}
+
+/* Style for individual character portraits */
+.character-portrait {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.group-portraits-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 15px 0;
+}
+
+.portrait-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 180px;
+}
+
+.circular-portrait {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 3px solid var(--rizal-blue-dark);
+    box-shadow: 
+        0 0 0 5px var(--vintage-paper),
+        0 0 0 8px var(--rizal-blue),
+        0 6px 15px rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    background-color: var(--vintage-paper);
+}
+
+.portrait-container:hover .circular-portrait {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* Character info centering */
+.character-info {
+    text-align: center;
+    max-width: 800px;
+    margin: 10px auto;
+    padding: 10px;
+    width: 100%;
+}
+
+.character-info p {
+    font-family: 'Source Serif Pro', serif;
+    font-size: 1.3rem;
+    line-height: 1.4;
+    margin: 0.5rem 0;
+    text-align: center;
+}
+
+/* Group Portraits Enhancements */
+.family-group, .couple-group {
+    margin-bottom: 30px;
+}
+
+/* Headings Enhancements */
+h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--vintage-dark);
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin: 3rem auto 2rem;
+    max-width: var(--text-width);
+    text-align: center;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    border-bottom: 2px solid var(--rizal-blue);
+    padding-bottom: 0.5rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+    margin: 1rem 0;
+    text-align: center;
+    border-bottom: 3px solid var(--rizal-blue);
+    padding-bottom: 0.5rem;
+    width: 100%;
+}
+
+h4 {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .character-grid {
+        gap: 1.5rem;
+    }
+
+    .group-portraits-row {
+        gap: 20px;
+    }
+
+    .circular-portrait {
+        width: 130px;
+        height: 130px;
+    }
+
+    .character-info p {
+        font-size: 1rem;
+    }
+
+    .character-entry h3 {
+        font-size: 1.6rem;
+    }
+
+    .character-entry h4 {
+        font-size: 1.1rem;
+    }
+}
+
+/* Add these new styles for the biography page */
+.biography-content {
+    max-width: 1000px;  /* Slightly narrower for better readability */
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.biography-content p {
+    font-size: 1.4rem;  /* Larger text */
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    text-align: justify;
+    color: var(--vintage-dark);
+}
+
+.biography-content strong {
+    color: #1a1a1a;  /* Slightly darker for emphasis */
+    font-weight: 700;
+}
+
+.biography-content em {
+    font-style: italic;
+    font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .biography-content p {
+        font-size: 1.2rem;
+        text-align: left;
+        padding: 0 10px;
+    }
+}
+
+/* Update text styles for better readability */
+section p {
+    font-family: 'Source Serif Pro', serif;
+    font-size: 1.5rem;
+    line-height: 1.8;
+    margin-bottom: 1.8rem;
+    max-width: var(--text-width);
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+    color: var(--vintage-dark);
+    letter-spacing: 0.01em;
+    text-indent: 1.5em;  /* Indent paragraphs like a novel */
+}
+
+section ul li {
+    font-family: 'Source Serif Pro', serif;
+    font-size: 1.5rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    text-align: justify;
+    padding-left: 1rem;
+}
+
+/* Update emphasis styles */
+section strong {
+    font-family: 'Source Serif Pro', serif;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+section em {
+    font-family: 'Source Serif Pro', serif;
+    font-style: italic;
+    color: #2a2a2a;
+}
+
+/* First paragraph after headings */
+h2 + p, h3 + p {
+    text-indent: 0;  /* Remove indent for first paragraph */
+    font-size: 1.3rem;  /* Slightly larger opening paragraph */
+    color: #1a1a1a;
+}
+
+/* Add decorative elements */
+section::first-letter {
+    font-size: inherit;
+    float: none;
+    line-height: inherit;
+    padding-right: 0;
+    color: inherit;
+}
+
+/* Update list styling */
+section ul {
+    max-width: var(--text-width);
+    margin: 1.5rem auto;
+    padding-left: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    section p, .biography-content p {
+        font-size: 1.15rem;
+        padding: 0 15px;
+        text-align: left;
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin: 2rem auto 1.5rem;
+        padding: 0 15px;
+    }
+
+    section::first-letter {
+        font-size: 3em;
+    }
+}
+
+/* Add decorative borders using news1.jpg */
+body:not(.homepage) {
+    position: relative;
+    background: var(--vintage-cream);
+}
+
+body:not(.homepage)::before,
+body:not(.homepage)::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 200px;
+    background-image: url('news1.jpg');  /* Fixed filename */
+    background-size: cover;
+    background-position: center;  /* Center the image */
+    opacity: 0.12;  /* Slightly more subtle */
+    z-index: -1;
+    pointer-events: none;
+    filter: sepia(20%);  /* Add vintage effect */
+}
+
+body:not(.homepage)::before {
+    left: 0;
+    transform: scaleX(-1);  /* Mirror the left border */
+}
+
+body:not(.homepage)::after {
+    right: 0;
+}
+
+/* Adjust main content to account for borders */
+body:not(.homepage) main {
+    max-width: calc(1200px + 400px);
+    padding: 2rem calc(200px + 2rem);
+    position: relative;
+    z-index: 1;  /* Ensure content stays above borders */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    body:not(.homepage)::before,
+    body:not(.homepage)::after {
+        width: 150px;
+    }
+
+    body:not(.homepage) main {
+        padding: 2rem calc(150px + 1rem);
+    }
+}
+
+@media (max-width: 768px) {
+    body:not(.homepage)::before,
+    body:not(.homepage)::after {
+        width: 80px;
+        opacity: 0.08;  /* Even more subtle on mobile */
+    }
+
+    body:not(.homepage) main {
+        padding: 2rem calc(80px + 0.5rem);
+    }
+}
+
+@media (max-width: 480px) {
+    body:not(.homepage)::before,
+    body:not(.homepage)::after {
+        display: none;
+    }
+
+    body:not(.homepage) main {
+        padding: 2rem 1rem;
+    }
+}
+
+/* Museum Gallery Styles */
+.historical-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 3rem auto;
+}
+
+.gallery-item {
+    position: relative;
+    padding: 2rem;
+    background: var(--vintage-paper);
+    box-shadow: 
+        /* Inner shadow */
+        inset 0 0 20px rgba(0, 0, 0, 0.1),
+        /* Outer shadow */
+        0 8px 30px rgba(0, 0, 0, 0.15);
+    border: 1px solid #8b7355;
+    border-radius: 5px;
+}
+
+.gallery-item::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 2px solid var(--rizal-blue-dark);
+    border-radius: 8px;
+    z-index: -1;
+}
+
+.gallery-image {
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.gallery-caption {
+    text-align: center;
+    font-family: 'Source Serif Pro', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--vintage-dark);
+    margin-top: 1.5rem;
+    padding: 0.5rem;
+    border-top: 1px solid #8b7355;
+}
+
+/* Specific image styles */
+#noli-cover {
+    background: linear-gradient(135deg, var(--vintage-paper), #f4e4bc);
+}
+
+#historical-photo {
+    filter: sepia(20%);
+}
+
+#philippines-map {
+    filter: sepia(10%) contrast(105%);
+}
+
+#ibarra-illustration {
+    filter: sepia(15%);
+}
+
+#execution-site {
+    filter: sepia(25%) contrast(110%);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .historical-gallery {
+        padding: 1rem;
+        gap: 3rem;
+    }
+
+    .gallery-item {
+        padding: 1rem;
+    }
+
+    .gallery-caption {
+        font-size: 1rem;
+    }
+}
+
+/* Image References Styling */
+.image-references li {
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+}
+
+.image-references strong {
+    display: block;
+    color: var(--vintage-dark);
+    margin-bottom: 0.3rem;
+}
+
+.image-references a {
+    color: var(--rizal-blue-dark);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.image-references a:hover {
+    color: var(--rizal-blue);
+    text-decoration: underline;
+}
